@@ -5,8 +5,8 @@ import './libraries/SafeMath.sol';
 contract UniswapV2ERC20 {
     using SafeMath for uint;
 
-    string public constant name = 'WanSwap Liquidity Pool Token';
-    string public constant symbol = 'WSLP';
+    string public constant name = 'BDSWAP Token';
+    string public constant symbol = 'BDSLP';
     uint8 public constant decimals = 18;
     uint  public totalSupply;
     mapping(address => uint) public balanceOf;

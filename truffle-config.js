@@ -24,6 +24,8 @@
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
 
+const HDWalletProvider = require('@truffle/hdwallet-provider');
+
 module.exports = {
   /**
    * Networks define how you connect to your ethereum client and let you set the
@@ -48,14 +50,20 @@ module.exports = {
      network_id: "*",       // Any network (default: none)
     },
 
-    wan179: {
-      host: "192.168.1.179",
-      port: 18545,
-      network_id: "*",
-      from: "0x9da26fc2e1d6ad9fdd46138906b0104ae68a65d8",
-      feeToSetter: "0x435b316a70cdb8143d56b3967aacdb6392fd6125",
+    hecoTestnet: {
+      provider: new HDWalletProvider("", "https://http-testnet.hecochain.com"),
+      network_id: "256",
+      gas: 8e6,
+      gasPrice: 1e9,
+      skipDryRun: true,
     },
-
+    hecoMainnet: {
+      provider: new HDWalletProvider("", "https://http-mainnet.hecochain.com"),
+      network_id: "128",
+      gas: 6e6,
+      gasPrice: 1e9,
+      skipDryRun: true,
+    },
     test: {
       host: "127.0.0.1",
       port: 7545,
